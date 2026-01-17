@@ -1,14 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // 🔴 IMPORTANT: Explicitly disable Turbopack (Next.js 16+)
+  experimental: {
+    turbo: false,
+  },
+
   // Build output optimized for Vercel / standalone deployments
   output: 'standalone',
 
-  // Disable Next.js image optimization (useful for static / external images)
+  // Disable Next.js image optimization
   images: {
     unoptimized: true,
   },
 
-  // ✅ FIX: Correct location for Next.js 16+
   // External packages allowed in Server Components
   serverExternalPackages: ['mongodb'],
 
@@ -24,7 +28,7 @@ const nextConfig = {
     return config;
   },
 
-  // Dev server behavior (mostly relevant for Pages Router)
+  // Dev server behavior
   onDemandEntries: {
     maxInactiveAge: 10000,
     pagesBufferLength: 2,
@@ -36,13 +40,10 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: [
-          // Allow embedding in iframes (modern, standards-based)
           {
             key: 'Content-Security-Policy',
             value: 'frame-ancestors *;',
           },
-
-          // CORS configuration
           {
             key: 'Access-Control-Allow-Origin',
             value: process.env.CORS_ORIGINS || '*',
