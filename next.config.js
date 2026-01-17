@@ -1,9 +1,3 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // 🔴 IMPORTANT: Explicitly disable Turbopack (Next.js 16+)
-  experimental: {
-    turbo: false,
-  },
 
   // Build output optimized for Vercel / standalone deployments
   output: 'standalone',
