@@ -9,15 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "mongodb": "latest",
-    "lucide-react": "latest",
-    "clsx": "latest",
-    "tailwind-merge": "latest",
-    "class-variance-authority": "latest"
-  },
+  "next": "latest",
+  "react": "latest",
+  "react-dom": "latest",
+  "mongodb": "latest",
+  "lucide-react": "latest",
+  "clsx": "latest",
+  "tailwind-merge": "latest",
+  "class-variance-authority": "latest",
+  "@radix-ui/react-slot": "latest",
+  "@radix-ui/react-label": "latest",
+  "@radix-ui/react-select": "latest",
+  "uuid": "latest"
+},
   "devDependencies": {
     "typescript": "latest",
     "@types/node": "latest",
